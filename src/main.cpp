@@ -1,8 +1,8 @@
-#include <iostream>
+#include <spdlog/spdlog.h>
 
 int main(void)
 {
-    std::cout<<"Hello OpenGL!"<<std::endl;
+    SPDLOG_INFO("Hello, opengl!");
     
     return 0;
 }
