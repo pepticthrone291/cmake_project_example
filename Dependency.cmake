@@ -41,4 +41,8 @@ ExternalProject_Add(
         -DGLFW_BUILD_DOCS=OFF
     )
 set(DEP_LIST ${DEP_LIST} dep_glfw)
-set(DEP_LIBS ${DEP_LIBS} glfw3)
+if(MSVC)
+    set(DEP_LIBS ${DEP_LIBS} glfw3)
+else()
+    set(DEP_LIBS ${DEP_LIBS} "-lglfw3 -framework Cocoa -framework OpenGL -framework IOKit")
+endif()
